@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/css/jam.css">
 <div class="row mt-4">
 	<div class="col-md-9">
 		<div class="card">
@@ -30,10 +31,35 @@
 			</ul>
 		</div>
 		<div class="card mt-4">
-			<div class="card-header">Lorem</div>
+			<div class="card-header">Share</div>
 			<div class="card-body">
-				<img src="<?= base_url() ?>/assets/img/gm2.jpg" width="100%">
+				<?php
+					$month= date ("m");
+					$year=date("Y");
+					$day=date("d");
+					$endDate=date("t",mktime(0,0,0,$month,$day,$year));
+					echo "Today : ".date("F, d Y ",mktime(0,0,0,$month,$day,$year));
+				?>
+			</div>
+			<div class="card-footer">
+				<div class="jam-digital">
+					<p id="jam" class="badge badge-dark p-1"></p>
+					<p id="menit" class="badge badge-dark p-1"></p>
+					<p id="detik" class="badge badge-dark p-1"></p>
+				</div>
 			</div>
 		</div>
 	</div>
 </div>
+
+<script>
+	window.setTimeout("waktu()", 1000);
+ 
+	function waktu() {
+		var waktu = new Date();
+		setTimeout("waktu()", 1000);
+		document.getElementById("jam").innerHTML = waktu.getHours();
+		document.getElementById("menit").innerHTML = waktu.getMinutes();
+		document.getElementById("detik").innerHTML = waktu.getSeconds();
+	}
+</script>

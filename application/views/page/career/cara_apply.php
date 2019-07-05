@@ -30,9 +30,9 @@
 			<div class="card-header">Menu Navigasi</div>
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item"><a href="<?= base_url('page/cara_apply') ?>">Tata Cara Apply</a></li>
-				<li class="list-group-item"><a href="<?= base_url('page') ?>">Klasifikasi </a></li>
-				<li class="list-group-item"><a href="<?= base_url('page') ?>">Daftar Lowongan Kerja</a></li>
-				<li class="list-group-item"><a href="<?= base_url('page') ?>">Upload Document</a></li>
+				<li class="list-group-item"><a href="<?= base_url('page/klasifikasi') ?>">Klasifikasi </a></li>
+				<li class="list-group-item"><a href="<?= base_url('page/career') ?>">Daftar Lowongan Kerja</a></li>
+				<li class="list-group-item"><a href="<?= base_url('page/doc_pelamar') ?>">Upload Document</a></li>
 			</ul>
 		</div>
 	</div>
