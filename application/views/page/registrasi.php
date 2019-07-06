@@ -3,8 +3,9 @@
 	<div class="col-md-9">
 		<div class="card">
 			<div class="card-header">Registrasi </div>
+			<form action="<?= base_url('pelamar/registrasi') ?>" method="post" enctype="multipart/form-data"> 
 			<div class="card-body">
-				<form>
+				 
 				  <div class="form-group row">
 				    <label class="col-sm-3 col-form-label">Username</label>
 				    <div class="col-sm-9">
@@ -20,7 +21,7 @@
 				  <div class="form-group row">
 				    <label class="col-sm-3 col-form-label">Nama lengkap</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" placeholder="Nama lengkap" name="password" required>
+				      <input type="text" class="form-control" placeholder="Nama lengkap" name="nama" required>
 				    </div>
 				  </div>
 				  <div class="form-group row">
@@ -77,9 +78,9 @@
 				  <div class="form-group row">
 				  	<label class="col-sm-3 col-form-label">Jenis kelamin</label>
 				  	<div class="col-sm-9">
-				  		<select class="form-control">
-				  			<option>Laki laki</option>
-				  			<option>Perempuan</option>
+				  		<select class="form-control" name="jk">
+				  			<option value="Laki-laki">Laki laki</option>
+				  			<option value="Perempuan">Perempuan</option>
 				  		</select>
 				  	</div>
 				  </div>
@@ -92,7 +93,7 @@
 				  <div class="form-group row">
 					<label class="col-sm-3 col-form-label">No HP</label>
 				    <div class="col-sm-9">
-				      <input type="text" class="form-control" placeholder="Nama">
+				      <input type="text" class="form-control" placeholder="No Hp" name="no_hp">
 				    </div>
 				  </div>
 				  <div class="form-group row">
@@ -101,19 +102,18 @@
 				      <input type="file" class="form-control" name="foto_pelamar">
 				    </div>
 				  </div>
-				  
-				</form>
 			</div>
 			<div class="card-footer">
 				<button class="btn btn-dark">Registrasi</button>
 			</div>
+			</form>
 		</div>
 	</div>
 	<div class="col-md-3">
 		<div class="card">
 			<div class="card-header text-center">Menu Navigasi</div>
 			<ul class="list-group list-group-flush">
-			    <li class="list-group-item"><a href="<?= base_url('page') ?>">Login Pelamar</a></li>
+			    <li class="list-group-item"><a href="<?= base_url('page/login') ?>">Login Pelamar</a></li>
 			</ul>
 		</div>
 

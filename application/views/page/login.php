@@ -1,6 +1,7 @@
 <div class="row mt-4">
 	<div class="col-md-2"></div>
 	<div class="col-md-8">
+		<?= $this->session->flashdata('message'); ?>
 		<div class="card">
 			<div class="card-header">Login</div>
 			<div class="card-body">
