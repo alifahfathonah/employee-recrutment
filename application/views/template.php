@@ -19,23 +19,27 @@
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('page') ?>">Home</a>
       </li>
+      <?php if(! $this->session->has_userdata('username')): ?>
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('page/registrasi') ?>">Registrasi</a>
       </li>
       <li class="nav-itme">
         <a class="nav-link" href="<?= base_url('page/login') ?>">Login</a>
       </li>
+      <?php else: ?>
+      <li class="nav-itme">
+        <a class="nav-link" href="<?= base_url('pelamar/logout') ?>">Logout</a>
+      </li>
+      <?php endif; ?>
+      <?php if($this->session->has_userdata('username')): ?>
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('page/career') ?>">Career</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="<?= base_url('page/test') ?>">Test Online</a>
       </li>
+      <?php endif; ?>
     </ul>
-  <!--   <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-light my-2 my-sm-0" type="submit">Search</button>
-    </form> -->
   </div>
  </div>
 </nav>
@@ -45,6 +49,11 @@
 <?= $content_view ?>
 	
 </div>
+
+<div class="footer text-center text-secondary mt-5 navbar-expand-lg navbar-bottom">
+CopyRight &copy; 2019 
+</div>
+
 <script type="text/javascript" src="<?= base_url() ?>/assets/vendor/bootstrap/js/jquery.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/assets/vendor/bootstrap/js/pover.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/assets/vendor/bootstrap/js/bootstrap.js"></script>

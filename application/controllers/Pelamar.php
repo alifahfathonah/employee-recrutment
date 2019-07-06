@@ -8,7 +8,37 @@ class Pelamar extends CI_Controller
 
 	}
 
+	public function login()
+	{
+		$username = $this->input->post('username');
+		$password = $this->input->post('password');
 
+		$user = $this->db->get_where('registrasi',['username' => $username])->row();
+
+		if($user) {
+			if(password_verify($password, $user->password)) {
+				$data = [
+					'username' 	=> $user->username,
+				];
+				$this->session->set_userdata($data);
+
+				redirect('page/career');
+			} else {
+				alerterror('message','Password salah');
+				redirect('page/login');
+			}
+		} else {
+			alerterror('message','Username tidak ditemukan');
+			redirect('page/login');
+		}
+	}
+
+	public function logout()
+	{
+		$this->session->unset_userdata('username');
+		alertsuccess('message','Logout berhasil');
+		redirect('page/login');
+	}
 	public function registrasi()
 	{
 		if(! empty($_FILES['foto_ijazah']['name'])) {
