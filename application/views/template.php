@@ -48,5 +48,7 @@
 <script type="text/javascript" src="<?= base_url() ?>/assets/vendor/bootstrap/js/jquery.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/assets/vendor/bootstrap/js/pover.js"></script>
 <script type="text/javascript" src="<?= base_url() ?>/assets/vendor/bootstrap/js/bootstrap.js"></script>
+
+<script type="text/javascript" src="<?= base_url() ?>/assets/js/scripts.js"></script>
 </body>
 </html>

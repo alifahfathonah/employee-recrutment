@@ -1,3 +1,4 @@
+<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/css/jam.css">
 <div class="row mt-4">
 	<div class="col-md-9">
 		<div class="card">
@@ -71,6 +72,29 @@
 	<div class="col-md-3">
 		<div class="card">
 			<div class="card-header text-center">Menu Navigasi</div>
+			<ul class="list-group list-group-flush">
+			    <li class="list-group-item"><a href="<?= base_url('page') ?>">Login Pelamar</a></li>
+			</ul>
+		</div>
+
+		<div class="card mt-4">
+			<div class="card-header">Share</div>
+			<div class="card-body">
+				<?php
+					$month= date ("m");
+					$year=date("Y");
+					$day=date("d");
+					$endDate=date("t",mktime(0,0,0,$month,$day,$year));
+					echo "Today : ".date("F, d Y ",mktime(0,0,0,$month,$day,$year));
+				?>
+			</div>
+			<div class="card-footer">
+				<div class="jam-digital">
+					<p id="jam" class="badge badge-dark p-1"></p>
+					<p id="menit" class="badge badge-dark p-1"></p>
+					<p id="detik" class="badge badge-dark p-1"></p>
+				</div>
+			</div>
 		</div>
 	</div>
 </div>
