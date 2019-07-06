@@ -1,5 +1,6 @@
 <div class="row mt-4">
 	<div class="col-md-9">
+		<?= $this->session->flashdata('message'); ?>
 		<div class="card">
 			<div class="card-body">
 				<img src="<?= base_url() ?>/assets/img/cara-aply.jpg" width="100%">
@@ -30,9 +31,8 @@
 			<div class="card-header">Menu Navigasi</div>
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item"><a href="<?= base_url('page/cara_apply') ?>">Tata Cara Apply</a></li>
-				<li class="list-group-item"><a href="<?= base_url('page/klasifikasi') ?>">Klasifikasi </a></li>
 				<li class="list-group-item"><a href="<?= base_url('page/career') ?>">Daftar Lowongan Kerja</a></li>
-				<li class="list-group-item"><a href="<?= base_url('page/doc_pelamar') ?>">Upload Document</a></li>
+				<li class="list-group-item">Upload Document</li>
 			</ul>
 		</div>
 	</div>

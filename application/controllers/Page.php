@@ -20,7 +20,9 @@ class Page extends CI_Controller {
 
 	public function career()
 	{
-		$this->template->load('template','page/career');
+		$this->db->order_by('id' ,'DESC');
+		$data['careers'] = $this->db->get('info_loker')->result();
+		$this->template->load('template','page/career',$data);
 	}
 
 	public function cara_apply()

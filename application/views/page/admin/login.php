@@ -3,8 +3,8 @@
 	<div class="col-md-8">
 		<?= $this->session->flashdata('message'); ?>
 		<div class="card">
-			<div class="card-header">Login pelamar</div>
-			<form action="<?= base_url('pelamar/login') ?>" method="post">
+			<div class="card-header">Login admin</div>
+			<form action="<?= base_url('admin/auth') ?>" method="post">
 			<div class="card-body">
 	
 				  <div class="form-group row">

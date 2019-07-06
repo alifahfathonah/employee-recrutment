@@ -22,7 +22,7 @@ class Pelamar extends CI_Controller
 				];
 				$this->session->set_userdata($data);
 
-				redirect('page/career');
+				redirect('page/cara_apply');
 			} else {
 				alerterror('message','Password salah');
 				redirect('page/login');
@@ -79,7 +79,7 @@ class Pelamar extends CI_Controller
 	private function _uploadImage($name)
 	 {
 	    $config['upload_path']          = './assets/img/pelamar/';
-	    $config['allowed_types']        = 'gif|jpg|png';
+	    $config['allowed_types']        = 'gif|jpg|png|pdf';
 	    $config['file_name']            = time().uniqid();
 	    $config['overwrite']			= true;
 	    $config['max_size']             = 1024; // 1MB
@@ -96,6 +96,68 @@ class Pelamar extends CI_Controller
 	    ];
 
 	    return $filename;
+  	}
+
+  	public function profil()
+  	{
+  		$data['profile'] = $this->db->get_where('registrasi',['username' => $this->session->userdata('username')])->row();
+  		$this->template->load('template','page/profile',$data);
+  	}
+
+  	public function update_profile()
+  	{
+  		
+		$data = [
+			'nama_lengkap'		=> $this->input->post('nama',true),
+			'tgl_lahir'			=> $this->input->post('tgl_lahir',true),
+			'agama'				=> $this->input->post('agama',true),
+			'kewarganegaraan'	=> $this->input->post('kewarganegaraan',true),
+			'jenjang_pendidikan'=> $this->input->post('jenjang_pendidikan',true),
+			'umur'				=> $this->input->post('umur',true),
+			'status'			=> $this->input->post('status',true),
+			'jenis_kelamin'		=> $this->input->post('jk',true),
+			'alamat_lengkap'	=> $this->input->post('alamat',true),
+			'no_hp'				=> $this->input->post('no_hp',true),
+			'tanggal'			=> date('Y-m-d'),
+		];
+
+		if(! empty($_FILES['foto_ijazah']['name'])) {
+			$data['pas_foto_ijazah'] = $this->_uploadImage('foto_ijazah');
+		} 
+		if(! empty($_FILES['foto_pelamar']['name'])) {
+			$data['pas_foto'] = $this->_uploadImage('foto_pelamar');
+		}
+
+		$this->db->update('registrasi',$data,['username' => $this->session->userdata('username')]);
+
+		alertsuccess('message','Berhasil mengupdate profile');
+		redirect('pelamar/profil');
+  	}
+
+  	public function apply($id)
+  	{
+  		$data['id_loker'] = $id;
+  		$this->template->load('template','page/career/doc_pelamar',$data);
+  	}
+
+  	public function upl_cv()
+  	{
+  		if(! empty($_FILES['cv']['name'])) {
+			$cv = $this->_uploadImage('cv');
+		} else {
+			$cv = 'default.png';
+		}
+
+		$data = [
+			'id_loker'		=> $this->input->post('id_loker',true),
+			'username'		=> $this->session->userdata('username'),
+			'name'			=> $this->input->post('name',true),
+			'cv'			=> $cv,
+		];
+
+		$this->db->insert('curiculum_vitae',$data);
+		alertsuccess('message','Data terkirim lengkap silahkan mengikuti test online');
+		redirect('page/cara_apply');
   	}
 
 }
