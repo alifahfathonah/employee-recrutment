@@ -2,8 +2,8 @@
 
 <div class="row mt-4">
 	<div class="col-md-9">
-		<h2>OPPORTUNITIES AVAILABLE</h2>
-		<div class="card mt-4">
+		<div class="card">
+			<div class="card-header">OPPORTUNITIES AVAILABLE</div>
 			<div class="card-body">
 				<div id="accordion">
 				<?php foreach($careers as $c): ?>
@@ -35,13 +35,7 @@
 		</div>
 	</div>
 	<div class="col-md-3">
-		<div class="input-group mb-3">
-		  <input type="text" class="form-control" placeholder="Search">
-		  <div class="input-group-append">
-		    <button class="btn btn-outline-secondary" type="button">Search</button>
-		  </div>
-		</div>
-		<div class="card mt-3">
+		<div class="card">
 			<div class="card-header">Menu Navigasi</div>
 			<ul class="list-group list-group-flush">
 				<li class="list-group-item"><a href="<?= base_url('page/cara_apply') ?>">Tata Cara Apply</a></li>

@@ -4,6 +4,7 @@
 	<title>Raharja</title>
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/vendor/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="<?= base_url() ?>/assets/css/main.css">
+      <link rel="shortcut icon" href="<?= base_url('assets/img/img-logo.jpeg') ?>" type="image/x-icon">
 </head>
 <body>
 
@@ -49,7 +50,7 @@
         <?php if($this->session->has_userdata('role')): ?>
         <a class="nav-link" href="<?= base_url('admin/test') ?>">Test Online</a>
         <?php else: ?>
-        <a class="nav-link" href="<?= base_url('page/test') ?>">Test Online</a>
+        <a class="nav-link" href="<?= base_url('page/test_online') ?>">Test Online</a>
         <?php endif; ?>
       </li>
       <?php endif; ?>
@@ -79,8 +80,9 @@ CopyRight &copy; 2019
                     </button>
                 </div>
                 <div class="modal-footer">
-                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     <a class="btn btn-dark" href="<?= base_url('pelamar/logout') ?>">Logout</a>
+                    <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                    
                 </div>
             </div>
         </div>

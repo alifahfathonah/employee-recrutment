@@ -3,7 +3,7 @@
 <div class="row mt-4">
 	<div class="col-md-9">
 		<div class="card">
-			<div class="card-header">Update data pelamar </div>
+			<div class="card-header">UPDATE DATA PELAMAR </div>
 			<form action="<?= base_url('pelamar/update_profile') ?>" method="post" enctype="multipart/form-data"> 
 			<div class="card-body">
 				  <div class="form-group row">
@@ -98,14 +98,8 @@
 		</div>
 	</div>
 	<div class="col-md-3">
-		<div class="card">
-			<div class="card-header text-center">Menu Navigasi</div>
-			<ul class="list-group list-group-flush">
-			    <li class="list-group-item"><a href="<?= base_url('page/login') ?>">Login Pelamar</a></li>
-			</ul>
-		</div>
 
-		<div class="card mt-4">
+		<div class="card">
 			<div class="card-header">Share</div>
 			<div class="card-body">
 				<?php

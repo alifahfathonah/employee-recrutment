@@ -3,8 +3,7 @@
 	<div class="col-md-9">
 		<div class="card">
 			<div class="card-body">
-				<img src="<?= base_url() ?>/assets/img/gm1.jpg" width="100%">
-				<h4 class="mt-3">Sejarah perusahaan</h4>
+				<h4>Visi Misi</h4>
 				Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 				tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 				quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
